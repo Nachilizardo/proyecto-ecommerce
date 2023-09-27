@@ -4,14 +4,11 @@ const Hero = ({saludar}) => {
   return (
     <>
         <div className='sectionOne'>
-        <h1>Welcome of Foods Recets</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-               Rem aliquam laborum consequatur ratione aspernatur illum ut veritatis atque quod, 
-               unde repellat cupiditate dolores optio? Ipsa cupiditate possimus consequuntu.
-               </p>
+        <h1>Welcome to Foods</h1>
+        <p>your website where you can find different recipes from all over the world.</p>
         </div>
-        <section className='filter'>
-            <input type="text" placeholder='Buscar por categoria' />
+        <section className='search-category'>
+            <input type="text" placeholder='Search by category...' />
             
         </section>
     </>

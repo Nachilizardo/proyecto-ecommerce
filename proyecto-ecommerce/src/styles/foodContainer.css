@@ -8,6 +8,8 @@
 }
 
 .foodsContainer .card {
+    background-color: #ffe8c7;
+    border-radius: 5px;
     max-width: 20%;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -15,6 +17,23 @@
     width: 25%;
 }
 
+.search-category{
+    padding: 1em;
+}
+
+.search-category input{
+    width: 20%;
+    height: 20px;
+    border-radius: 4px;
+    border: solid 1px #524b4b;
+}
+
+
 .foodsContainer .card img{
     max-width: 100%;
+}
+
+.button-recipe{
+    margin-top: 2em;
+    border: solid 1px #706a62;
 }

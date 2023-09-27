@@ -21,9 +21,10 @@ function App() {
 
   }, [])
   
-  const filterCategory = () => {
+    const filterCategory = () => {
+      
     console.log("hola mundo")
-  }
+      }
 
   return (
     <>

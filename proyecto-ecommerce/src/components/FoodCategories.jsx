@@ -5,7 +5,7 @@ const FoodCategories = (props) => {
     const cat = props.food.categories
 
     return (
-        
+
         <div className='foodsContainer'>
                 
            {
@@ -16,6 +16,7 @@ const FoodCategories = (props) => {
                                 {item.strCategory}
                             </h4>
                             <img src={item.strCategoryThumb} alt={item.strCategory} />
+                            <button className='button-recipe'>see recipe</button>
                         </div>
     
                     )
