@@ -1,0 +1,11 @@
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+#categorie-selected{
+    height: 1.3rem;
+}

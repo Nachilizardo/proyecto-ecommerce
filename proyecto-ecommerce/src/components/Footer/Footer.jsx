@@ -1,5 +1,6 @@
 import React from 'react'
-import '../styles/footer.css'
+import MP from '../../assets/mercadopago.png'
+import './footer.css'
 
 const Footer = () => {
   return (
@@ -7,10 +8,7 @@ const Footer = () => {
         <div className="footer-container">
           <div className="pagos">
             <p>Medios de pagos</p>
-            <img src="./assets/imgfooter/visa.png" alt="" />
-            <img src="./assets/imgfooter/mastercard.png" alt=""/>
-            <img src="./assets/imgfooter/american_express.png" alt=""/>
-            <img src="./assets/imgfooter/Paypal.png" alt=""/>
+            <img src={MP} alt="" />
           </div>
           <div className="red-social">
             <p>Siguenos en nuestras redes</p>

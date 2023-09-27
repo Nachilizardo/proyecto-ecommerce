@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/foodContainer.css'
+import './foodContainer.css'
 
 const FoodCategories = (props) => {
     const cat = props.food.categories
@@ -9,7 +9,7 @@ const FoodCategories = (props) => {
         <div className='foodsContainer'>
                 
            {
-                cat?.map((item, index) => {
+                cat?.map((item) => {
                     return(
                         <div className='card' key={item.idCategory}>
                             <h4>
