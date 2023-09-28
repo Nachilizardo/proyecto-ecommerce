@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/footer.css'
-import PAGO from '../assets/mercadopago.png'
+import './footer.css'
+import PAGO from '../../assets/mercadopago.png'
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
             <p>Follow us on our social networks</p>
             <i className="fa-brands fa-facebook"></i>
             <i className="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-tiktok"></i>
+            <i className="fa-brands fa-tiktok"></i>
             <i className="fa-brands fa-spotify"></i>
           </div>
         

@@ -37,3 +37,11 @@
     margin-top: 2em;
     border: solid 1px #706a62;
 }
+
+.mealName{
+    color: #000;
+}
+
+.fail{
+    color: #f00
+}
