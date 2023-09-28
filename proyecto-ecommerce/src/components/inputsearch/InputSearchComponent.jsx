@@ -1,4 +1,5 @@
 import React from 'react'
+import './inputsearch.css'
 
 const InputSearchComponent = ({searchItem, setSearch, handleSearch}) => {
     const handleKeyPress = (e) => {
@@ -10,6 +11,7 @@ const InputSearchComponent = ({searchItem, setSearch, handleSearch}) => {
   return (
     
         <section className='inputsearch'>
+            <h2>CATEGORIES:</h2>
             <input type="text" 
             placeholder='Search by category...'
             value={searchItem}

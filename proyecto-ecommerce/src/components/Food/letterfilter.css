@@ -1,0 +1,6 @@
+.filter-letter{
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    padding: 2em;
+}

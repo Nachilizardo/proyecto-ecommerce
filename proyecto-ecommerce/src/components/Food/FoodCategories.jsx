@@ -5,9 +5,11 @@ import MealList from './MealList';
 import RecipeButton from '../RecipeDetails/recipeButton';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
 
-const FoodCategories = (props) => {
+const FoodCategories = (props) => { 
+    // obtenemos las categorias de comidas y comidas disponibles a traves de las props
     const cat = props.food.categories
-    const hasMeals = props.meals.meals
+    const hasMeals = props.meals.meals 
+
     const [filteredLetter, setFilteredLetter] = useState('A');
     const [selectedRecipe, setSelectedRecipe] = useState(null); // Nuevo estado para la receta seleccionada
     const [isRecipeDetailsVisible, setIsRecipeDetailsVisible] = useState(false); // Nuevo estado para la visibilidad de los detalles de la receta
@@ -32,9 +34,11 @@ const FoodCategories = (props) => {
         <>
         <div className='foodsContainer'>
             {hasMeals == undefined ? (
+                 // si no hay comidas disponibles
                 cat == null ? (
                     <p>results not found</p>
                 ) : (
+                    // Mostramos las categorías de comida
                     cat?.map((item) => {
                         return (
                             <div className='card' key={item.idCategory}>
@@ -47,6 +51,7 @@ const FoodCategories = (props) => {
                     })
                 )
             ) : (
+                 // Si hay comidas disponibles
                 props.meals.meals?.map((item) => {
                     return (
                         <div className='card' key={item.idMeal}>
@@ -63,7 +68,7 @@ const FoodCategories = (props) => {
             // Utiliza RecipeDetails para mostrar los detalles de la receta seleccionada
             <RecipeDetails recipe={selectedRecipe} onClose={handleCloseRecipe} />
         )}
-        <h1>Filter food by letter</h1>
+        <h2> FILTER FOOD BY LETTER </h2>
         <LetterFilter onFilterChange={handleFilterChange} />
         {/* Pasa la letra filtrada a MealList */}
         <MealList letter={filteredLetter} />

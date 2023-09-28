@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./letterfilter.css"
 
 const LetterFilter = ({ onFilterChange }) => {
   const [letterSelected, setLetterSelected] = useState('A');
@@ -10,7 +11,7 @@ const LetterFilter = ({ onFilterChange }) => {
   };
 
   return (
-    <div>
+    <div className='filter-letter'>
       <label htmlFor="letter">Filter by letter:</label>
       <input
         type="text"

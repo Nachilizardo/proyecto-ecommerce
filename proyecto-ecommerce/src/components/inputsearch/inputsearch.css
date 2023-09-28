@@ -1,0 +1,10 @@
+.inputsearch {
+    padding: 2em;
+}
+
+input {
+    height: 18px;
+width: 19%;
+border-radius: 5px;
+border: solid 1px dimgrey;
+}
