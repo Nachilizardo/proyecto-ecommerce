@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import RecipeButton from '../RecipeDetails/recipeButton';
+import RecipeDetails from '../RecipeDetails/RecipeDetails';
 
 const MealList = ({ letter }) => {
 
     const [meals, setMeals] = useState([]);
+    const [selectedRecipe, setSelectedRecipe] = useState(null);
+    const [isRecipeDetailsVisible, setIsRecipeDetailsVisible] = useState(false);
 
     useEffect(() => {
         const fetchMeals = async () => {
@@ -23,12 +27,28 @@ const MealList = ({ letter }) => {
 
     }, [letter]);
 
+    const handleRecipeClick = async (mealId) => {
+        try {
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
+            const data = await response.json();
+            const recipe = data.meals[0];
+            setSelectedRecipe(recipe);
+            setIsRecipeDetailsVisible(true); // Abre la ventana de detalles al hacer clic
+        } catch (error) {
+            console.error('Error fetching recipe:', error);
+        }
+    };
+
+    const handleCloseRecipe = () => {
+        setIsRecipeDetailsVisible(false); // Cierra la ventana de detalles
+    };
+
     return (
         <div>
             <h2>Results for the letter: {letter}</h2>
             <div className='foodsContainer'>
-                {letter === "" ? (
-                    <h2 className='fail'>CAN NOT LEAVE BLANK SPACES</h2>
+                {letter === "" || letter === " " ? (
+                    <h2 className='fail'>CANNOT LEAVE BLANK SPACES</h2>
                 ) : isNaN(letter) ? (
                     letter.length > 1 ? (
                         <h2 className='fail'>INVALID CHARACTER</h2>
@@ -37,7 +57,7 @@ const MealList = ({ letter }) => {
                             <div className='card' key={meal.idMeal}>
                                 <h4 className='mealName'>{meal.strMeal}</h4>
                                 <img src={meal.strMealThumb} alt={meal.strMeal} />
-                                <button className='button-recipe'>See recipe</button>
+                                <RecipeButton onClick={() => handleRecipeClick(meal.idMeal)} />
                             </div>
                         ))
                     )
@@ -45,6 +65,9 @@ const MealList = ({ letter }) => {
                     <h2 className='fail'>INVALID CHARACTER (cannot be a number)</h2>
                 )}
             </div>
+            {isRecipeDetailsVisible && (
+                <RecipeDetails recipe={selectedRecipe} onClose={handleCloseRecipe} />
+            )}
         </div>
     );
 };

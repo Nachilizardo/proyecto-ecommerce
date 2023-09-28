@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './NavBar.css'
+import ICON from '../../assets/logofoodsicon.png'
 
 function NavBar() {
 
@@ -24,6 +25,7 @@ function NavBar() {
       <header>
         <nav className="navBar">
           <div className={`navItems ${isOpen && "open"}`}>
+            <img src={ICON} alt="FOOD ICON" />
             <a href="#" onClick={handleIsOpen}>Home</a>
             <a href="#contact" onClick={handleIsOpen}>Contact</a>
 
