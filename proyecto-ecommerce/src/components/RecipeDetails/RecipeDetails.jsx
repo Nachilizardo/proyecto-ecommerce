@@ -12,6 +12,7 @@ const RecipeDetails = ({ recipe, onClose }) => {
     <div className='recipe-details'>
       {closeIcon}
       <h2 className='mealName'>{recipe.strMeal || recipe.strCategory}</h2>
+      {recipe.strMealThumb ? <img className='th-img' src={recipe.strMealThumb}/> : ""}
       <p className='mealName'>{recipe.strInstructions || recipe.strCategoryDescription}</p>
     </div>
   );
